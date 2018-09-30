@@ -71,12 +71,11 @@ namespace 选课系统
                         }
                     }
                 }
-            }
+            
             else
             {
                 MessageBox.Show("请填写用户名与密码！");
                 Lno.Focus();
-                1231231;
             }
         }
 

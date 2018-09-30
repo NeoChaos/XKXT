@@ -31,7 +31,7 @@ namespace 选课系统
 
         public void button1_Click(object sender, EventArgs e)
         {
-            if(Lno.Text!="" && Lpwd.Text != "")
+            if (Lno.Text != "" && Lpwd.Text != "")
             {
                 string strCon = "Data Source=.\\sqlexpress;Initial Catalog=JXGL;Integrated Security=True";
                 SqlConnection mycon = new SqlConnection(strCon);
@@ -51,7 +51,7 @@ namespace 选课系统
                             //获取该用户对应的密码
                             string ckPwd = reader.GetString(reader.GetOrdinal("Spwd"));
                             //判断密码
-                            if(Lpwd.Text == ckPwd)
+                            if (Lpwd.Text == ckPwd)
                             {
                                 Form1 formMain = new Form1(this);
                                 this.Hide();
@@ -71,7 +71,8 @@ namespace 选课系统
                         }
                     }
                 }
-            
+            }
+
             else
             {
                 MessageBox.Show("请填写用户名与密码！");

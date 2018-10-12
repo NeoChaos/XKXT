@@ -13,6 +13,7 @@ namespace 选课系统
 {
     public partial class Login : Form
     {
+        public static string Uno;
         public Login()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace 选课系统
                 //创建查询命令
                 using (SqlCommand mycmd = mycon.CreateCommand())
                 {
-                    string Uno = Lno.Text;
+                    Uno = Lno.Text;
                     //查询学号
                     mycmd.CommandText = "select * from T_Student where Sno='" + Uno + "'";
                     //保存查询到的数据在reader这个变量
@@ -80,5 +81,29 @@ namespace 选课系统
             }
         }
 
+        private void 课程管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLogin cLogin = new CLogin();
+            if(DialogResult.OK == cLogin.ShowDialog())
+            {
+                Course course = new Course();
+                this.Hide();
+                course.ShowDialog();
+                this.Close();
+            }
+
+        }
+
+        private void 系统维护ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLogin cLogin = new CLogin();
+            if (DialogResult.OK == cLogin.ShowDialog())
+            {
+                SSet sSet = new SSet();
+                this.Hide();
+                sSet.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }

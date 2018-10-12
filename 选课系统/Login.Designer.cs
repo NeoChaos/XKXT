@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Lno = new System.Windows.Forms.TextBox();
             this.Lpwd = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.课程管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.系统维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,12 +96,35 @@
             this.Lpwd.TabIndex = 5;
             this.Lpwd.UseSystemPasswordChar = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.课程管理ToolStripMenuItem,
+            this.系统维护ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // 课程管理ToolStripMenuItem
+            // 
+            this.课程管理ToolStripMenuItem.Name = "课程管理ToolStripMenuItem";
+            this.课程管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.课程管理ToolStripMenuItem.Text = "课程管理";
+            this.课程管理ToolStripMenuItem.Click += new System.EventHandler(this.课程管理ToolStripMenuItem_Click);
+            // 
+            // 系统维护ToolStripMenuItem
+            // 
+            this.系统维护ToolStripMenuItem.Name = "系统维护ToolStripMenuItem";
+            this.系统维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.系统维护ToolStripMenuItem.Text = "打分系统";
+            this.系统维护ToolStripMenuItem.Click += new System.EventHandler(this.系统维护ToolStripMenuItem_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 211);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.Lpwd);
             this.Controls.Add(this.Lno);
             this.Controls.Add(this.button2);
@@ -107,6 +135,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登陆";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +149,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Lpwd;
         public System.Windows.Forms.TextBox Lno;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 课程管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 系统维护ToolStripMenuItem;
     }
 }

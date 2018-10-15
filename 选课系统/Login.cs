@@ -41,9 +41,10 @@ namespace 选课系统
                 //创建查询命令
                 using (SqlCommand mycmd = mycon.CreateCommand())
                 {
-                    Uno = Lno.Text;
+                    Uno =  Lno.Text;
+                    mycmd.Parameters.Add("@uno", SqlDbType.VarChar).Value = Uno;
                     //查询学号
-                    mycmd.CommandText = "select * from T_Student where Sno='" + Uno + "'";
+                    mycmd.CommandText = "select * from T_Student where Sno=@uno";
                     //保存查询到的数据在reader这个变量
                     using (SqlDataReader reader = mycmd.ExecuteReader())
                     {

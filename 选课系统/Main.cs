@@ -41,7 +41,13 @@ namespace 选课系统
             dataGridView2.DataSource = dt2;
             mycon.Close();
 
+            dataGridView1.Columns["Cno"].HeaderText = "课程号";
+            dataGridView1.Columns["Cname"].HeaderText = "课程名称";
+            dataGridView1.Columns["Ccode"].HeaderText = "学分";
 
+            dataGridView2.Columns["Cno"].HeaderText = "课程号";
+            dataGridView2.Columns["Cname"].HeaderText = "课程名称";
+            dataGridView2.Columns["Ccode"].HeaderText = "学分";
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,7 +61,7 @@ namespace 选课系统
             string add = dataGridView1.Rows[index].Cells["Cno"].Value.ToString();
             string strCon = "Data Source=.\\sqlexpress;Initial Catalog=JXGL;Integrated Security=True";
 
-            string strCheck = "select count(*) from T_SC where Cno=" + add;
+            string strCheck = "select count(*) from T_SC where Cno=" + add +"and Sno="+Login.Uno;
             
 
             SqlConnection mycon = new SqlConnection(strCon);

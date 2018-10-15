@@ -34,7 +34,7 @@ namespace 选课系统
             mycon.Close();
 
             //显示已选课程
-            strSel = "select Cno,Cname,Ccode from V_SC where Sno='"+Login.Uno+"'";
+            strSel = "select Cno,Cname,Ccode from V_SC where Sno='"+Login.Uno+"'order by Cno";
             SqlDataAdapter myda2 = new SqlDataAdapter(strSel, mycon);
             DataTable dt2 = new DataTable();
             myda2.Fill(dt2);
@@ -76,7 +76,7 @@ namespace 选课系统
             }
                 
 
-            string strSel = "select Cno,Cname,Ccode from V_SC where Sno='" + Login.Uno + "'";
+            string strSel = "select Cno,Cname,Ccode from V_SC where Sno='" + Login.Uno + "'order by Cno";
             SqlDataAdapter myda2 = new SqlDataAdapter(strSel, mycon);
             DataTable dt2 = new DataTable();
             myda2.Fill(dt2);
@@ -97,7 +97,7 @@ namespace 选课系统
             SqlCommand mycmd = new SqlCommand(strDel, mycon);
             mycmd.ExecuteNonQuery();
 
-            string strSel = "select Cno,Cname,Ccode from V_SC where Sno='" + Login.Uno + "'";
+            string strSel = "select Cno,Cname,Ccode from V_SC where Sno='" + Login.Uno + "'order by Cno";
             SqlDataAdapter myda2 = new SqlDataAdapter(strSel, mycon);
             DataTable dt2 = new DataTable();
             myda2.Fill(dt2);

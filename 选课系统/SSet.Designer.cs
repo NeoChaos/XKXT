@@ -130,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SSet";
             this.Text = "打分系统";
+            this.Load += new System.EventHandler(this.SSet_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

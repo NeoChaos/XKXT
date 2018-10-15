@@ -46,6 +46,7 @@ namespace 选课系统
             else
             {
                 MessageBox.Show("课程不存在！");
+                groupBox1.Text = "课程";
                 textBox1.Focus();
             }
             
@@ -71,7 +72,6 @@ namespace 选课系统
             string strUp = "UPDATE T_SC set Grade='" + sgrade + "' where Sno='" + sno + "' AND Cno='"+cno+"'";
             SqlCommand mycmd = new SqlCommand(strUp, mycon);
             mycmd.ExecuteNonQuery();
-            //MessageBox.Show("添加成功！");
 
             string strSel = "select Sno,Grade from T_SC where Cno='" + cno + "'";
             SqlDataAdapter myda = new SqlDataAdapter(strSel, mycon);
@@ -79,6 +79,14 @@ namespace 选课系统
             myda.Fill(dt);
             dataGridView1.DataSource = dt;
             mycon.Close();
+
+            dataGridView1.Columns["Sno"].HeaderText = "学号";
+            dataGridView1.Columns["Grade"].HeaderText = "成绩";
+        }
+
+        private void SSet_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
